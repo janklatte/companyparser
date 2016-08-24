@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/python
 
 # A simple tool to query a certain number of businesses based on location and keyword from the Yelp Databank into
 # an excel spreadsheet (.xls) and .csv (UTF-8) file for importing into e.g. a CRM software
@@ -6,9 +6,14 @@
 import xlwt
 import csv
 import json
+import sys
 
 from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
+
+#fix decode issue
+reload(sys)  
+sys.setdefaultencoding('utf8')
 
 #get yelp access data
 with open('yelp_cred.json') as yelp_data_file:
