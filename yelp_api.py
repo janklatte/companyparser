@@ -105,7 +105,7 @@ for i in range(0,loops+1):
 		print(response.businesses[x].name)
 
 
-		#test if phone number excist if not set to 0
+		#test if phone number exists if not set to 0
 		if response.businesses[x].phone is None:
 			response.businesses[x].phone = "0"
 
